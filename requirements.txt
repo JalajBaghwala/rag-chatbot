@@ -10,3 +10,4 @@ langchain-community
 docx2txt
 sentence-transformers
 streamlit
+langchain-openai
