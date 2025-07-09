@@ -3,11 +3,22 @@ from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from vector_store import load_vector_store
 from dotenv import load_dotenv
+from document_loader import load_documents, chunk_documents
+from vector_store import load_vector_store, save_vector_store, faiss_index_exists
+
 
 load_dotenv()  # loads OPENAI_API_KEY
 
 def run_rag_query(user_query: str):
-    vector_store = load_vector_store("docs/faiss_index")
+    persist_path = "docs/faiss_index"
+
+    if not faiss_index_exists(persist_path):
+        print("[INFO] FAISS index not found. Rebuilding...")
+        docs = load_documents("data/")
+        chunks = chunk_documents(docs)
+        save_vector_store(chunks, persist_path)
+
+    vector_store = load_vector_store(persist_path)
 
     retriever = vector_store.as_retriever(
         search_type="similarity", search_kwargs={"k": 3}
