@@ -32,6 +32,19 @@ It reads your documents (PDF, DOCX, TXT), indexes them, and answers your questio
 
 ---
 
+## 📚 On What Document it is trained on  (Training Documents)
+
+The chatbot is trained on a collection of documents stored in the `/data/` folder:
+
+| 📄 Document Name         | Description                                             |
+|--------------------------|---------------------------------------------------------|
+| `Langchain.pdf`          | Covers the LangChain framework, its modules, and how it facilitates chaining LLM components for structured tasks. |
+| `OpenAI.pdf`             | Provides introductory knowledge about OpenAI, its capabilities, models, and use cases. |
+| `Python Tutorial.docx`   | A comprehensive tutorial on Python fundamentals, OOP concepts, and class-based structures. |
+| `Transformer.pdf`        | Explains the Transformer architecture, its layers, attention mechanism, and relevance in LLMs. |
+
+---
+
 ## ⚙️ Tech Stack
 
 | Component        | Technology                        |
