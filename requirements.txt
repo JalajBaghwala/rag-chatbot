@@ -11,3 +11,4 @@ docx2txt
 sentence-transformers
 streamlit
 langchain-openai
+langchain-huggingface
