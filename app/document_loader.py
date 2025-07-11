@@ -44,7 +44,6 @@ def chunk_documents(documents, chunk_size=300, chunk_overlap=50):
 chunks = chunk_documents(docs)
 print(f"Generated {len(chunks)} chunks")
 
-
 if __name__ == "__main__":
     docs = load_documents("data/")
     chunks = chunk_documents(docs)
